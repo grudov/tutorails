@@ -8,7 +8,7 @@ describe PagesController do
       get 'home'
       response.should be_success
     end
-    
+
     it "doir avoir le bon titre" do
       get 'home'
       response.should have_selector("title", :content => " | Accueil")
@@ -20,24 +20,24 @@ describe PagesController do
       get 'contact'
       response.should be_success
     end
-    
+
     it "doir avoir le bon titre" do
       get 'contact'
       response.should have_selector("title", :content => " | Contact")
     end
   end
-  
+
   describe "GET 'about'" do
     it "should be successulf" do
       get 'about'
       response.should be_success
     end
-    
+
     it "doir avoir le bon titre" do
       get 'about'
       response.should have_selector("title", :content => " | A Propos")
     end
   end
-  
+
 
 end

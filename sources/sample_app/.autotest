@@ -1,4 +1,12 @@
 Autotest.add_hook :initialize do |autotest|
+
+  #autotest.add_exception(%r{^\./\.git})
+  #autotest.add_exception(%r{^\./db})
+  #autotest.add_exception(%r{^\./rerun.txt})
+  #autotest.add_exception(%r{^\./log})
+  
+  %w{.git webrat.log vendor index .DS_Store ._}.each {|exception| autotest.add_exception(exception)}
+
   autotest.add_mapping(%r%^spec/(requests)/.*rb$%) do|filename, _|
     filename
   end
